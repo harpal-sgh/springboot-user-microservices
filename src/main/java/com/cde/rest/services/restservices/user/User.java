@@ -2,11 +2,16 @@ package com.cde.rest.services.restservices.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 public class User {
 	private Integer id;
 	
+	@Size(min=2, message = "name should have 2 characters")
 	private String name;
 	
+	@Past
 	private Date birthDate;
 	
 	protected User() {
@@ -36,12 +41,12 @@ public class User {
 		this.name = name;
 	}
 
-	public Date getBirthData() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthData(Date birthData) {
-		this.birthDate = birthData;
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	@Override
